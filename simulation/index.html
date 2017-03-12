@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Front Role Testing Ground</title>
+    <script type="text/javascript" src="./node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./node_modules/crypto-js/crypto-js.js"></script>
+    <script type="text/javascript" src="./node_modules/front-roles/front-roles.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
+  </head>
+  <body ng-app="front-roles-simulation">
+    <div ng-controller="RSimulationCtrl">
+      Simulation Ground
+      <button type="button"
+              name="button" ng-click="simulate_login()">
+        Simulate Login
+      </button>
+      <button type="button" name="button" ng-click="simulate_logout()">
+        Simulate Logout
+      </button>
+
+      <br></br>
+      <br></br>
+
+      <button fr-can="index User" type="button" name="button" ng-click="button_click()">
+        index User
+      </button>
+      <button fr-can="show Member" type="button" name="button" ng-click="button_click()">
+        show Member
+      </button>
+      <button fr-can="create Member" type="button" name="button" ng-click="button_click()">
+        create Member
+      </button>
+      <button fr-can="update Contest" type="button" name="button" ng-click="sec_button_click()">
+        update Contest
+      </button>
+      <button fr-can="destroy Contest" type="button" name="button" ng-click="sec_button_click()">
+        delete Chat
+      </button>
+
+      <a href="https://www.google.com/" fr-can="destroy Member">Go To Google</a>
+    </div>
+  </body>
+</html>
