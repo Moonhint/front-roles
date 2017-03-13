@@ -1,14 +1,26 @@
 {
   "name": "front-roles",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple user permission manager that fetch data from your server side (Only for Angular)",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moonhint/front-roles.git"
+  },
+  "keywords": [
+    "user",
+    "permission",
+    "roles",
+    "current",
+    "simple",
+    "implementation"
+  ],
   "scripts": {
     "start": "index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Antoni <email.to.antoni@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "crypto-js": "^3.1.9-1"
   },
@@ -16,5 +28,9 @@
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-copy": "^1.0.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Moonhint/front-roles"
+  },
+  "homepage": "https://github.com/Moonhint/front-roles.git#readme"
 }

@@ -4,24 +4,24 @@ Simple user permission manager that fetch data from your server side (Only for A
 ## Dependencies
 by npm:
 
-`<script type="text/javascript" src="./node_modules/angular/angular.min.js"></script>`
+`<script src="./node_modules/angular/angular.min.js"></script>`
 
-`<script type="text/javascript" src="./node_modules/crypto-js/crypto-js.js"></script>`
+`<script src="./node_modules/crypto-js/crypto-js.js"></script>`
 
 by bower:
 
-`<script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>`
+`<script src="./bower_components/angular/angular.min.js"></script>`
 
-`<script type="text/javascript" src="./bower_components/crypto-js/crypto-js.js"></script>`
+`<script src="./bower_components/crypto-js/crypto-js.js"></script>`
 
 ## How To Setup
 on your index.html:
 
-`<script type="text/javascript" src="./node_modules/front-roles/front-roles.js"></script>`
+`<script src="./node_modules/front-roles/front-roles.js"></script>`
 
 or
 
-`<script type="text/javascript" src="./bower_components/front-roles/front-roles.js"></script>`
+`<script src="./bower_components/front-roles/front-roles.js"></script>`
 
 
 on index.js
