@@ -2,7 +2,7 @@
   "name": "front-roles",
   "description": "Simple user permission manager that fetch data from your server side (Only for Angular)",
   "main": [
-    "front-roles.js"
+    "front-roles.min.js"
   ],
   "authors": [
     "Antoni <email.to.antoni@gmail.com>"
@@ -30,6 +30,8 @@
     "bower_components",
     "node_modules",
     "gulpfile.js",
+    "map",
+    "index.js",
     "npm-debug.log"
   ]
 }

@@ -17,11 +17,11 @@ by bower:
 ## How To Setup
 on your index.html:
 
-`<script src="./node_modules/front-roles/front-roles.js"></script>`
+`<script src="./node_modules/front-roles/front-roles.min.js"></script>`
 
 or
 
-`<script src="./bower_components/front-roles/front-roles.js"></script>`
+`<script src="./bower_components/front-roles/front-roles.min.js"></script>`
 
 
 on index.js

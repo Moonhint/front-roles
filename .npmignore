@@ -2,4 +2,6 @@
 gulpfile.js
 /node_modules
 /bower_components
+/map
 npm-debug.log
+index.js
