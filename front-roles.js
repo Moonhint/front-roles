@@ -3,11 +3,11 @@ let FrontRoles = ((angular, crypto) => {
   'use strict';
   // TODO: Need to get resource from server side:
   // - format JSON - TODO: Need to format the data so it ready to use
-	// permissions: {  index: ["ModelName1", "ModelName2", "ModelName3"],    get list of things
-	//                 create: ["ModelName1", "ModelName2", "ModelName3"],   create new thing
-	//                 show: ["ModelName1", "ModelName2", "ModelName3"],     get a thing
-	//                 update: ["ModelName1", "ModelName2", "ModelName3"],   update a thing
-	//                 destroy: ["ModelName1", "ModelName2", "ModelName3"] } destory a thing
+	// can: {  index: ["ModelName1", "ModelName2", "ModelName3"],    get list of things
+	//         create: ["ModelName1", "ModelName2", "ModelName3"],   create new thing
+	//         show: ["ModelName1", "ModelName2", "ModelName3"],     get a thing
+	//         update: ["ModelName1", "ModelName2", "ModelName3"],   update a thing
+	//         destroy: ["ModelName1", "ModelName2", "ModelName3"] } destory a thing
 
   // - When to get the data from server? (How soon?) (The Performance Impact?) [Handle change of permission because of server data change]
   //      - Option1: before every http call (very accurate)
@@ -53,7 +53,7 @@ let FrontRoles = ((angular, crypto) => {
     let default_configs = {
       utilize_fetch: true,
       encryption_secret: 'secret',
-      guess_abilities: ['index', 'show']
+      guest_abilities: ['index', 'show']
     };
 
     let configs = clone_obj(default_configs);
@@ -67,7 +67,7 @@ let FrontRoles = ((angular, crypto) => {
       if (data){
         configs.utilize_fetch = data.utilize_fetch || default_configs.utilize_fetch;
         configs.encryption_secret = data.encryption_secret || default_configs.encryption_secret;
-        configs.guess_abilities = data.guess_abilities || default_configs.guess_abilities;
+        configs.guest_abilities = data.guest_abilities || default_configs.guest_abilities;
       }
     };
 
@@ -154,7 +154,7 @@ let FrontRoles = ((angular, crypto) => {
     function($http, FrontRoles, FrontRolesLocalStorageService){
     let Storage = FrontRolesLocalStorageService;
     let on_guess = true;
-    let guess_abilities = FrontRoles.get_configs().guess_abilities;
+    let guest_abilities = FrontRoles.get_configs().guest_abilities;
 
     this.permissions = {};
 
@@ -198,7 +198,7 @@ let FrontRoles = ((angular, crypto) => {
             reject(Error(res.statusText));
           }
         },(reason)=>{
-          console.error("FrontRoles: Failed to fetch resources from server, fall back to default guest only privileges [" + guess_abilities.toString() + "]");
+          console.error("FrontRoles: Failed to fetch resources from server, fall back to default guest only privileges [" + guest_abilities.toString() + "]");
           reject(reason);
         });
       });
@@ -207,7 +207,7 @@ let FrontRoles = ((angular, crypto) => {
     this.check_permission = function (ability, resource) {
       let permission_index = -1;
       if (on_guess){
-        permission_index = guess_abilities.indexOf(ability);
+        permission_index = guest_abilities.indexOf(ability);
       }else{
         let abilities = this.permissions[ability];
         if (abilities){
@@ -388,6 +388,13 @@ let FrontRoles = ((angular, crypto) => {
       // });
 
     }
+
+    // multiElement: true,
+    // transclude: 'element',
+    // priority: 600,
+    // terminal: true,
+    // restrict: 'A',
+    // $$tlb: true,
 
     return {
       priority: 1,
