@@ -81,7 +81,7 @@ let FrontRoles = ((angular, crypto) => {
   });
 
   Roles.config(()=>{
-    console.info("config");
+    // console.info("config");
   });
 
   /**
@@ -101,7 +101,7 @@ let FrontRoles = ((angular, crypto) => {
     if (current_permissions) {
       FrontRolesPermissionService.set_permissions(current_permissions);
     }
-    console.info("run");
+    // console.info("run");
   }]);
 
   /**
@@ -177,7 +177,7 @@ let FrontRoles = ((angular, crypto) => {
 
     this.fetch_permissions = function(resources) {
       return new Promise((resolve, reject) => {
-        let command = resources.params;
+        let command = resources.params || {};
 
         if (resources.current_user){
           command.user_id = resources.current_user.id;
