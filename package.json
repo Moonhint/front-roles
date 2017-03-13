@@ -1,6 +1,6 @@
 {
   "name": "front-roles",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple user permission manager that fetch data from your server side (Only for Angular)",
   "main": "index.js",
   "repository": {
