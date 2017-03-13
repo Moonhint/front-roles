@@ -29,6 +29,7 @@
     "simulation",
     "bower_components",
     "node_modules",
-    "gulpfile.js"
+    "gulpfile.js",
+    "npm-debug.log"
   ]
 }
