@@ -132,11 +132,13 @@ RSimulation.config((FrontRolesProvider)=>{
 
 
 ### Format of Permissions JSON
+  ```
   permissions = { index: ["ModelName1", "ModelName2", "ModelName3"],    get list of things
                   create: ["ModelName1", "ModelName2", "ModelName3"],   create new thing
                   show: ["ModelName1", "ModelName2", "ModelName3"],     get a thing
                   update: ["ModelName1", "ModelName2", "ModelName3"],   update a thing
                   destroy: ["ModelName1", "ModelName2", "ModelName3"] } destory a thing
+  ```
 
 ## Generate Permissions From Server Side
   - If you are user of ruby on rails you can use 'can can' or 'can can can'
